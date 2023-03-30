@@ -1,0 +1,127 @@
+
+.parent {
+    background: linear-gradient(black, blue, black);
+    height: 100vh;
+   
+}
+.main {
+    background-image: url(./background.png);
+    position: relative;
+}
+.timer {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+}
+.reward {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.reward-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.reward-container {
+    padding: 2px;
+    margin: 2px;
+}
+.reward-container.active {
+    background: teal;
+    border-radius: 5px;
+}
+.question {
+    border: 3px solid white;
+    border-radius: 20px;
+    background: linear-gradient(rgb(3, 3, 97), black);
+}
+.answer {
+    background: linear-gradient(black, rgb(1, 1, 119));
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 6px;
+    margin: 10px 0px;
+    border: 2px solid white;
+}
+.answer:hover, .answer.active {
+    background: mediumblue;
+    padding: auto;
+}
+.answer.correct{
+    animation: correct 3s ease forwards;
+}
+.start-game {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@keyframes correct {
+    0%,
+    22%,
+    42%
+    {
+        background: mediumblue;
+    }
+    20%,
+    40%, 
+    60%{
+        background: linear-gradient(#0e0124, #22074d)
+    }
+    62%,
+    100%{
+        background: green;
+    }
+}
+.answer.wrong{
+    animation: wrong 3s ease forwards;
+}
+@keyframes wrong {
+    0%,
+    22%,
+    42%
+    {
+        background: mediumblue;
+    }
+    20%,
+    40%, 
+    60%{
+        background: linear-gradient(#0e0124, #22074d)
+    }
+    62%,100%{
+        background: rgb(212, 5, 5);
+    }
+}
+.icon {
+    cursor: pointer;
+}
+
+.earned {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position:absolute;
+}
+
+@media (max-width: 400px) {
+    .reward-id {
+        font-size: 10px;
+        display: none;
+    }
+    .reward-amount {
+        font-size: 12px;
+    }
+}
+
